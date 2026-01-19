@@ -51,7 +51,7 @@ const Dueling = () => {
 
                             <div className="cta-section">
                                 <a
-                                    href="https://www.worldcubeassociation.org"
+                                    href="https://www.worldcubeassociation.org/persons/2025OJHA01"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn btn-primary"

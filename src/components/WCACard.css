@@ -1,0 +1,179 @@
+.wca-card {
+    padding: 1.75rem;
+    max-width: 380px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+/* Header */
+.wca-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.wca-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-primary-light);
+}
+
+.wca-profile-badge {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+
+.profile-initials {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: white;
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Profile Info */
+.wca-profile-info {
+    margin-bottom: 1.75rem;
+}
+
+.wca-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-primary);
+}
+
+.wca-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.wca-id,
+.wca-country {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.wca-id {
+    color: var(--color-primary-light);
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+.icon {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.7;
+}
+
+.country-name {
+    font-weight: 500;
+}
+
+.flag {
+    font-size: 1.125rem;
+}
+
+/* Stats Section */
+.wca-stats {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.25rem;
+}
+
+.stat-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.stat-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.stat-icon.competitions {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--color-primary-light);
+}
+
+.stat-icon.solves {
+    background: rgba(251, 146, 60, 0.15);
+    color: var(--color-accent);
+}
+
+.stat-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    color: var(--color-text-primary);
+}
+
+/* Footer */
+.wca-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wca-status {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .wca-card {
+        max-width: 100%;
+    }
+
+    .wca-stats {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+}

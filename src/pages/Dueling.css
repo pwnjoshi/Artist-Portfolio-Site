@@ -1,0 +1,118 @@
+.dueling-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.wca-card-section {
+    position: sticky;
+    top: 7rem;
+}
+
+.dueling-info {
+    max-width: 700px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.info-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+}
+
+.subsection-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-primary);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.achievement-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.achievement-event {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.achievement-time {
+    font-size: 1.75rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    margin-bottom: 0.5rem;
+}
+
+.achievement-rank {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.cta-section {
+    margin-top: 2rem;
+}
+
+.btn-icon-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dueling-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .wca-card-section {
+        position: static;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .dueling-info {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .subsection-title {
+        font-size: 1.25rem;
+    }
+
+    .info-text {
+        font-size: 1rem;
+    }
+}

@@ -2,10 +2,24 @@ import WCACard from '../components/WCACard';
 import './Dueling.css';
 
 const Dueling = () => {
-    const achievements = [
-        { event: '3x3x3 Cube', time: '12.34s', rank: 'National Top 10' },
-        { event: '2x2x2 Cube', time: '3.52s', rank: 'Regional Champion' },
-        { event: 'Pyraminx', time: '4.89s', rank: 'Personal Best' },
+    // Official WCA Personal Records - 2025OJHA01
+    const personalRecords = [
+        { event: '3x3x3 Cube', single: '19.72s', average: '23.75s', icon: '🎯' },
+        { event: '2x2x2 Cube', single: '5.58s', average: '7.03s', icon: '⚡' },
+        { event: '4x4x4 Cube', single: '1:18.82', average: '1:35.70', icon: '🔥' },
+        { event: '5x5x5 Cube', single: '2:48.93', average: '2:55.46', icon: '💪' },
+        { event: '6x6x6 Cube', single: '5:33.35', average: '6:08.06', icon: '🚀' },
+        { event: '3x3x3 One-Handed', single: '1:01.41', average: '1:22.88', icon: '👋' },
+        { event: 'Megaminx', single: '3:33.33', average: '-', icon: '⭐' },
+        { event: 'Pyraminx', single: '7.76s', average: '8.64s', icon: '🔺' },
+        { event: 'Skewb', single: '8.71s', average: '18.46s', icon: '💎' },
+    ];
+
+    // Competition History
+    const competitions = [
+        { name: 'IEEE Cubing Nepal 2025', date: 'January 2025', location: 'Nepal' },
+        { name: 'Nepali Nationals 2025', date: '2025', location: 'Nepal' },
+        { name: 'LOCUS Cubing Nepal 2025', date: '2025', location: 'Nepal' },
     ];
 
     return (
@@ -18,6 +32,20 @@ const Dueling = () => {
                     <p className="page-description animate-fade-in">
                         Speed, strategy, and precision. Explore my journey in the World Cube Association.
                     </p>
+                    <div className="stats-summary">
+                        <div className="stat-item">
+                            <span className="stat-number gradient-text">3</span>
+                            <span className="stat-label">Competitions</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number gradient-text">124</span>
+                            <span className="stat-label">Solves</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number gradient-text">9</span>
+                            <span className="stat-label">Events</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -29,25 +57,57 @@ const Dueling = () => {
                             <WCACard />
                         </div>
 
-                        {/* About Section */}
+                        {/* Personal Records Section */}
                         <div className="dueling-info">
-                            <h2 className="section-title">About My Cubing Journey</h2>
+                            <h2 className="section-title">Personal Records</h2>
+                            <p className="info-text">
+                                Official times from World Cube Association competitions. Each event showcases
+                                my best single solve and average of 5 solves.
+                            </p>
+
+                            <div className="records-grid">
+                                {personalRecords.map((record, index) => (
+                                    <div key={index} className="record-card glass">
+                                        <div className="record-header">
+                                            <span className="record-icon">{record.icon}</span>
+                                            <h4 className="record-event">{record.event}</h4>
+                                        </div>
+                                        <div className="record-times">
+                                            <div className="time-item">
+                                                <span className="time-label">Single</span>
+                                                <span className="time-value gradient-text">{record.single}</span>
+                                            </div>
+                                            <div className="time-divider"></div>
+                                            <div className="time-item">
+                                                <span className="time-label">Average</span>
+                                                <span className="time-value gradient-text">{record.average}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Competition History */}
+                            <h3 className="subsection-title">Competition History</h3>
+                            <div className="competitions-list">
+                                {competitions.map((comp, index) => (
+                                    <div key={index} className="competition-item glass">
+                                        <div className="comp-icon">🏆</div>
+                                        <div className="comp-details">
+                                            <h4 className="comp-name">{comp.name}</h4>
+                                            <p className="comp-meta">{comp.date} • {comp.location}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* About Section */}
+                            <h3 className="subsection-title">About My Cubing Journey</h3>
                             <p className="info-text">
                                 I started speedcubing in 2020 and have been competing in WCA events since 2025.
                                 My passion for cubing mirrors my artistic pursuits - both require patience,
                                 practice, and a deep appreciation for patterns and precision.
                             </p>
-
-                            <h3 className="subsection-title">Competition Highlights</h3>
-                            <div className="achievements-grid">
-                                {achievements.map((achievement, index) => (
-                                    <div key={index} className="achievement-card glass">
-                                        <h4 className="achievement-event">{achievement.event}</h4>
-                                        <p className="achievement-time gradient-text">{achievement.time}</p>
-                                        <p className="achievement-rank">{achievement.rank}</p>
-                                    </div>
-                                ))}
-                            </div>
 
                             <div className="cta-section">
                                 <a

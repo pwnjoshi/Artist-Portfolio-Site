@@ -170,10 +170,38 @@
 @media (max-width: 768px) {
     .wca-card {
         max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .wca-header {
+        gap: 1.25rem;
+    }
+
+    .wca-avatar {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .wca-name {
+        font-size: 1.5rem;
+    }
+
+    .wca-id,
+    .wca-location {
+        font-size: 0.875rem;
     }
 
     .wca-stats {
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8125rem;
     }
 }

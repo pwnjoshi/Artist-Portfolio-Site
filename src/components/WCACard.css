@@ -1,207 +1,154 @@
 .wca-card {
-    padding: 1.75rem;
-    max-width: 380px;
-    width: 100%;
-    animation: fadeIn 0.8s ease-out 0.3s both;
+  position: relative;
+  background: rgba(18, 18, 18, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Header */
+.wca-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
 .wca-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
 }
 
 .wca-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--color-primary-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
 }
 
 .wca-profile-badge {
-    width: 3.5rem;
-    height: 3.5rem;
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
-}
-
-.profile-initials {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 }
 
 .profile-picture {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--color-bg-elevated);
 }
 
-/* Profile Info */
 .wca-profile-info {
-    margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 .wca-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: var(--color-text-primary);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .wca-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.wca-id,
-.wca-country {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-}
-
-.wca-id {
-    color: var(--color-primary-light);
-    font-weight: 600;
-    font-family: 'Courier New', monospace;
+.wca-id, .wca-country {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
 }
 
 .icon {
-    width: 1rem;
-    height: 1rem;
-    opacity: 0.7;
-}
-
-.country-name {
-    font-weight: 500;
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
 }
 
 .flag {
-    font-size: 1.125rem;
+  margin-left: auto;
+  font-size: 1.2rem;
 }
 
-/* Stats Section */
 .wca-stats {
-    display: flex;
-    gap: 1rem;
-    padding: 1.25rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .stat-item {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.stat-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-}
-
-.stat-icon.competitions {
-    background: rgba(139, 92, 246, 0.15);
-    color: var(--color-primary-light);
-}
-
-.stat-icon.solves {
-    background: rgba(251, 146, 60, 0.15);
-    color: var(--color-accent);
-}
-
-.stat-icon svg {
-    width: 100%;
-    height: 100%;
-}
-
-.stat-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .stat-label {
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .stat-value {
-    font-size: 1.5rem;
-    font-weight: 800;
-    font-family: var(--font-display);
-    color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
 }
 
-/* Footer */
 .wca-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .wca-status {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .wca-card {
-        max-width: 100%;
-        padding: 2rem 1.5rem;
-    }
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4ade80;
+}
 
-    .wca-header {
-        gap: 1.25rem;
-    }
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #4ade80;
+  animation: pulse 2s infinite;
+}
 
-    .wca-avatar {
-        width: 4.5rem;
-        height: 4.5rem;
-    }
-
-    .wca-name {
-        font-size: 1.5rem;
-    }
-
-    .wca-id,
-    .wca-location {
-        font-size: 0.875rem;
-    }
-
-    .wca-stats {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem 0;
-    }
-
-    .stat-value {
-        font-size: 2rem;
-    }
-
-    .stat-label {
-        font-size: 0.8125rem;
-    }
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+  100% { opacity: 1; transform: scale(1); }
 }

@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Dueling from './pages/Dueling';
-import Contact from './pages/Contact';
 import './App.css';
 
 // ScrollToTop component to handle scroll restoration
@@ -30,7 +29,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/dueling" element={<Dueling />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

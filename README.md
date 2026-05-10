@@ -1,34 +1,24 @@
-# 🎨 Bishal Ojha - Portfolio Website
+# Bishal Ojha - Portfolio Website
 
-A stunning, modern portfolio website showcasing the artistic talent and speedcubing achievements of Bishal Ojha. Built with React and featuring elegant animations, glassmorphism design, and interactive features.
-
-![Portfolio Preview](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+A modern portfolio website showcasing the artistic talent and speedcubing achievements of Bishal Ojha. Built with React and featuring elegant animations, glassmorphism design, and interactive features.
 
 ---
 
-## ✨ Features
+## Features
 
-### 🎨 **Art Portfolio**
+### Art Portfolio
 - Interactive gallery with hover effects
 - Full-screen lightbox modal for artwork viewing
 - Lazy-loaded images for optimal performance
 - Professional sketch and portrait showcase
 
-### 🧩 **WCA Profile Integration**
+### WCA Profile Integration
 - Real-time speedcubing statistics
 - Direct link to World Cube Association profile
 - Competition history and solve counts
 - Interactive profile card with glassmorphism
 
-### 📬 **Contact Form**
-- Functional email submission via Web3Forms
-- Real-time validation and error handling
-- Success/error feedback messages
-- Spam protection included
-
-### 🎯 **Modern UI/UX**
+### Modern UI/UX
 - Dark theme with vibrant gradients
 - Glassmorphism design elements
 - Smooth page transitions
@@ -37,7 +27,7 @@ A stunning, modern portfolio website showcasing the artistic talent and speedcub
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -45,30 +35,30 @@ A stunning, modern portfolio website showcasing the artistic talent and speedcub
 
 ### Installation
 
-1. **Clone the repository**
+1. Clone the repository
    ```bash
    git clone https://github.com/yourusername/bishal-ojha-portfolio.git
    cd bishal-ojha-portfolio
    ```
 
-2. **Install dependencies**
+2. Install dependencies
    ```bash
    npm install
    ```
 
-3. **Start development server**
+3. Start development server
    ```bash
    npm run dev
    ```
 
-4. **Open in browser**
+4. Open in browser
    ```
    http://localhost:5173
    ```
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Bishal_Ojha_Site/
@@ -86,8 +76,7 @@ Bishal_Ojha_Site/
 │   ├── pages/                # Page components
 │   │   ├── Home.jsx
 │   │   ├── Gallery.jsx
-│   │   ├── Dueling.jsx
-│   │   └── Contact.jsx
+│   │   └── Dueling.jsx
 │   ├── App.jsx               # Main app component
 │   ├── App.css               # Global styles
 │   └── main.jsx              # Entry point
@@ -97,53 +86,27 @@ Bishal_Ojha_Site/
 
 ---
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
-- **Primary**: `#8B5CF6` (Purple)
-- **Secondary**: `#EC4899` (Pink)
-- **Accent**: `#FB923C` (Orange)
-- **Background**: `#0F0425` (Dark Purple)
+- Primary: #ff4b2b (Orange Red)
+- Secondary: #8b5cf6 (Purple)
+- Accent: #fb923c (Orange)
+- Background: #050505 (Deep Graphite)
 
 ### Typography
-- **Display Font**: Outfit (Google Fonts)
-- **Body Font**: Inter (Google Fonts)
+- Display Font: Outfit (Google Fonts)
+- Body Font: Inter (Google Fonts)
 
 ### Key Design Elements
-- Glassmorphism cards with `backdrop-filter: blur()`
+- Glassmorphism cards with backdrop-filter
 - Gradient text effects
 - Smooth transitions and micro-animations
 - Box shadows with color tints
 
 ---
 
-## 🔧 Configuration
-
-### Contact Form Setup
-
-The contact form uses **Web3Forms** for email delivery.
-
-1. **Get your access key**:
-   - Visit [web3forms.com](https://web3forms.com)
-   - Enter `me@bishalojha.com.np`
-   - Copy the access key from your email
-
-2. **Update Contact.jsx**:
-   ```javascript
-   // Line 18 in src/pages/Contact.jsx
-   formData.append('access_key', 'YOUR_ACCESS_KEY_HERE');
-   ```
-
-3. **Test the form**:
-   - Navigate to `/contact`
-   - Fill out and submit the form
-   - Check your email inbox
-
-> **Note**: The form supports 1000 free submissions/month
-
----
-
-## 📦 Build for Production
+## Build for Production
 
 ### Create optimized build
 ```bash
@@ -157,31 +120,9 @@ This creates a `dist/` folder with optimized production files.
 npm run preview
 ```
 
-### Deploy
-
-#### Option 1: Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel
-```
-
-#### Option 2: Netlify
-1. Drag and drop `dist/` folder to [netlify.com/drop](https://app.netlify.com/drop)
-2. Or use Netlify CLI:
-   ```bash
-   npm install -g netlify-cli
-   netlify deploy --prod
-   ```
-
-#### Option 3: GitHub Pages
-```bash
-npm run build
-npm run deploy
-```
-
 ---
 
-## 🛠️ Available Scripts
+## Available Scripts
 
 | Command | Description |
 |---------|-------------|
@@ -192,38 +133,32 @@ npm run deploy
 
 ---
 
-## 📱 Pages
+## Pages
 
-### Home (`/`)
+### Home (/)
 - Hero section with call-to-action buttons
 - WCA profile card
 - Featured artwork preview
-- Social media links
 
-### Gallery (`/gallery`)
+### Gallery (/gallery)
 - Grid layout of artwork
 - Hover effects with view icon
 - Click to open full-screen lightbox
 - Lazy loading for performance
 
-### Dueling (`/dueling`)
+### Dueling (/dueling)
 - Speedcubing achievements
 - WCA competition highlights
 - Personal bests showcase
 
-### Contact (`/contact`)
-- Functional contact form
-- Email and social links
-- Instagram and WCA profile links
-
 ---
 
-## 🎯 Key Features Explained
+## Key Features Explained
 
 ### Image Lightbox
 Click the eye icon on any gallery image to view it full-screen:
 - Smooth fade-in animation
-- Click outside or press `Esc` to close
+- Click outside or press Esc to close
 - Body scroll locked when open
 - Displays image caption
 
@@ -231,28 +166,20 @@ Click the eye icon on any gallery image to view it full-screen:
 Automatically scrolls to page top when navigating between pages using React Router.
 
 ### Responsive Design
-- **Desktop**: Full-width layout with side-by-side components
-- **Tablet**: Adjusted grid layouts
-- **Mobile**: Single-column stacked layout
+- Desktop: Full-width layout with side-by-side components
+- Tablet: Adjusted grid layouts
+- Mobile: Single-column stacked layout
 
 ---
 
-## 🌐 External Integrations
+## Adding New Artwork
 
-- **WCA Profile**: [2025OJHA01](https://www.worldcubeassociation.org/persons/2025OJHA01)
-- **Instagram**: [@bshaloza77](https://www.instagram.com/bshaloza77/)
-- **Email**: [me@bishalojha.com.np](mailto:me@bishalojha.com.np)
-
----
-
-## 🎨 Adding New Artwork
-
-1. **Add image to public folder**:
+1. Add image to public folder:
    ```
    public/artworks/your-artwork.jpg
    ```
 
-2. **Update artworks array in Gallery.jsx**:
+2. Update artworks array in Gallery.jsx:
    ```javascript
    const artworks = [
      {
@@ -265,23 +192,18 @@ Automatically scrolls to page top when navigating between pages using React Rout
    ];
    ```
 
-3. **Image recommendations**:
+3. Image recommendations:
    - Format: JPG or PNG
    - Resolution: 1920x1080 (or similar aspect ratio)
    - File size: < 500KB for faster loading
 
 ---
 
-## 🐛 Troubleshooting
-
-### Contact form not working
-- Verify Web3Forms access key is properly set
-- Check browser console for errors
-- Ensure internet connection is active
+## Troubleshooting
 
 ### Images not loading
-- Check file paths (should start with `/`)
-- Verify images exist in `public/` folder
+- Check file paths (should start with /)
+- Verify images exist in public/ folder
 - Clear browser cache
 
 ### Build errors
@@ -294,40 +216,13 @@ npm run build
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-## 👤 Author
-
-**Bishal Ojha**
-- Portfolio: [bishalojha.com.np](https://bishalojha.com.np)
-- Email: [me@bishalojha.com.np](mailto:me@bishalojha.com.np)
-- Instagram: [@bshaloza77](https://www.instagram.com/bshaloza77/)
-- WCA: [2025OJHA01](https://www.worldcubeassociation.org/persons/2025OJHA01)
-
----
-
-## 🙏 Acknowledgments
-
-- Design inspired by modern portfolio trends
-- Icons from Heroicons
-- Fonts from Google Fonts
-- Email service by Web3Forms
-
----
-
-## 📞 Support
-
-For questions or support, please reach out via:
-- Email: me@bishalojha.com.np
-- Instagram DM: @bshaloza77
-
----
-
 <div align="center">
-  <p>Built with ❤️ using React + Vite</p>
+  <p>Built using React + Vite</p>
   <p>© 2026 Bishal Ojha. All rights reserved.</p>
 </div>

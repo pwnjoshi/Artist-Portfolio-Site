@@ -1,58 +1,99 @@
 import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, ExternalLink, ChevronDown } from 'lucide-react';
 import WCACard from './WCACard';
 import './Hero.css';
 
 const Hero = () => {
-    return (
-        <section className="hero">
-            <div className="hero-container">
-                {/* Left Side - Main Content */}
-                <div className="hero-content">
-                    <span className="hero-label animate-fade-in">A ORIGINAL ENTHUSIASM</span>
-                    <h1 className="hero-title animate-fade-in">
-                        Precision Meets<br />
-                        <span className="gradient-text">Creativity</span>
-                    </h1>
-                    <p className="hero-description animate-fade-in">
-                        Merging the logical complexity of the WCA world with the soulful expression of portrait art. Explore the duality of Bishal Ojha.
-                    </p>
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-                    <div className="hero-buttons animate-fade-in">
-                        <Link to="/gallery" className="btn btn-primary">
-                            <svg className="btn-icon-svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                            </svg>
-                            View Sketches
-                        </Link>
-                        <a
-                            href="https://www.worldcubeassociation.org/persons/2025OJHA01"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-secondary"
-                        >
-                            <svg className="btn-icon-svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                            </svg>
-                            Check WCA Profile
-                        </a>
-                    </div>
-                </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-                {/* Right Side - WCA Card */}
-                <div className="hero-card-container">
-                    <WCACard />
-                </div>
-            </div>
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 100, damping: 10 },
+    },
+  };
 
-            {/* Scroll Indicator */}
-            <div className="scroll-indicator">
-                <span className="scroll-text">SCROLL</span>
-                <svg className="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-            </div>
-        </section>
-    );
+  return (
+    <section className="hero">
+      <div className="hero-bg-glow" />
+      <div className="hero-bg-glow-2" />
+      
+      <div className="container">
+        <div className="hero-container">
+          {/* Left Side */}
+          <motion.div 
+            className="hero-content"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.span variants={itemVariants} className="hero-label">
+              Precision & Artistry
+            </motion.span>
+            
+            <motion.h1 variants={itemVariants} className="hero-title">
+              Engineering Speed,<br />
+              <span className="gradient-text">Crafting Art</span>
+            </motion.h1>
+            
+            <motion.p variants={itemVariants} className="hero-description">
+              Discover a portfolio where the high-speed precision of competitive WCA cubing meets the meticulous detail of fine portrait art.
+            </motion.p>
+
+            <motion.div variants={itemVariants} className="hero-buttons">
+              <Link to="/gallery" className="btn btn-primary">
+                View Sketches <ArrowRight size={18} />
+              </Link>
+              <a
+                href="https://www.worldcubeassociation.org/persons/2025OJHA01"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                WCA Profile <ExternalLink size={18} />
+              </a>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Side */}
+          <motion.div 
+            className="hero-card-container"
+            initial={{ opacity: 0, scale: 0.8, rotateY: 30 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, type: 'spring', bounce: 0.4 }}
+            style={{ y }}
+          >
+            <WCACard />
+          </motion.div>
+        </div>
+      </div>
+
+      <motion.div 
+        className="scroll-indicator"
+        style={{ opacity }}
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+      >
+        <span>SCROLL</span>
+        <ChevronDown size={20} />
+      </motion.div>
+    </section>
+  );
 };
 
 export default Hero;
